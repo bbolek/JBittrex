@@ -2,17 +2,29 @@ package jbittrex.model;
 
 import java.util.Date;
 
-public class HistoryRecord {
+import com.google.gson.annotations.SerializedName;
 
+public class MonetaryHistory {
+
+	@SerializedName("PaymentUuid")
 	private String paymentUuid;
+	@SerializedName("Currency")
 	private String currency;
+	@SerializedName("Address")
 	private String address;
+	@SerializedName("Opened")
 	private Date opened;
+	@SerializedName("Authorized")
 	private boolean authorized;
+	@SerializedName("PendingPayment")
 	private boolean pendingPayment;
+	@SerializedName("TxCost")
 	private double txCost;
+	@SerializedName("TxId")
 	private String txId;
+	@SerializedName("Canceled")
 	private boolean canceled;
+	@SerializedName("InvalidAddress")
 	private boolean invalidAddress;
 	
 	public String getPaymentUuid() {

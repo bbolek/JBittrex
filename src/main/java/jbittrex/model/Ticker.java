@@ -1,9 +1,14 @@
 package jbittrex.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Ticker {
 
+	@SerializedName("Bid")
 	private double bid;
+	@SerializedName("Ask")
 	private double ask;
+	@SerializedName("Last")
 	private double last;
 	
 	public double getBid() {

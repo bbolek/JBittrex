@@ -2,14 +2,22 @@ package jbittrex.model;
 
 import java.util.Date;
 
-public class Market {
+import com.google.gson.annotations.SerializedName;
 
+public class Market {
+	@SerializedName("MarketCurrency")
 	private String marketCurrency;
+    @SerializedName("BaseCurrency")
 	private String baseCurrency;
+    @SerializedName("MarketCurrencyLong")
 	private String marketCurrencyLong;
+    @SerializedName("BaseCurrencyLong")
 	private String baseCurrencyLong;
+	@SerializedName("MinTradeSize")
 	private double minTradeSize;
+	@SerializedName("IsActive")
 	private boolean isActive;
+	@SerializedName("Created")
 	private Date created;
 	
 	public String getMarketCurrency() {

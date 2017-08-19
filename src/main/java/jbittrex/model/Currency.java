@@ -1,13 +1,22 @@
 package jbittrex.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Currency {
 
+	@SerializedName("Currency")
 	private String currency;
+	@SerializedName("CurrencyLong")
 	private String currencyLong;
+	@SerializedName("MinConfirmation")
 	private int minConfirmation;
+	@SerializedName("TxFee")
 	private double txFee;
+	@SerializedName("IsActive")
 	private boolean isActive;
+	@SerializedName("CoinType")
 	private String coinType;
+	@SerializedName("BaseAddress")
 	private String baseAddress;
 	
 	public String getCurrency() {

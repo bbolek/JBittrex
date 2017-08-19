@@ -4,36 +4,53 @@ import java.util.Date;
 
 import com.google.gson.annotations.SerializedName;
 
-public class OrderHistory {
-
+public class Order {
+	
 	@SerializedName("OrderUuid")
-	private String orderUuid;
+	private String orderUuid;	
 	@SerializedName("Exchange")
 	private String exchange;
-	@SerializedName("TimeStamp")
-	private Date timeStamp;
-	@SerializedName("OrderType")
-	private String orderType;
 	@SerializedName("Limit")
 	private double limit;
 	@SerializedName("Quantity")
 	private double quantity;
 	@SerializedName("QuantityRemaining")
 	private double quantityRemaining;
-	@SerializedName("Commission")
-	private double commission;
+	@SerializedName("Reserved")
+	private double reserved;
+	@SerializedName("ReserveRemaining")
+	private double reserveRemaining;
+	@SerializedName("CommissionReserved")
+	private double commissionReserved;
+	@SerializedName("CommissionReserveRemaining")
+	private double commissionReserveRemaining;
+	@SerializedName("CommissionPaid")
+	private double commissionPaid;
 	@SerializedName("Price")
 	private double price;
 	@SerializedName("PricePerUnit")
 	private double pricePerUnit;
+	@SerializedName("Opened")
+	public Date opened;
+	@SerializedName("Closed")
+	public Date closed;
+	@SerializedName("IsOpen")
+	public boolean isOpen;
+	@SerializedName("Sentinel")
+	public String sentinel;
+	@SerializedName("CancelInitiated")
+	public boolean cancelInitiated;
 	@SerializedName("IsConditional")
 	private boolean isConditional;
 	@SerializedName("Condition")
 	private String condition;
 	@SerializedName("ConditionTarget")
 	private String conditionTarget;
+	@SerializedName("OrderType")
+	public String orderType;
 	@SerializedName("ImmediateOrCancel")
 	private boolean immediateOrCancel;	
+	
 	public String getOrderUuid() {
 		return orderUuid;
 	}
@@ -46,18 +63,7 @@ public class OrderHistory {
 	public void setExchange(String exchange) {
 		this.exchange = exchange;
 	}
-	public Date getTimeStamp() {
-		return timeStamp;
-	}
-	public void setTimeStamp(Date timeStamp) {
-		this.timeStamp = timeStamp;
-	}
-	public String getOrderType() {
-		return orderType;
-	}
-	public void setOrderType(String orderType) {
-		this.orderType = orderType;
-	}
+	
 	public double getLimit() {
 		return limit;
 	}
@@ -75,12 +81,6 @@ public class OrderHistory {
 	}
 	public void setQuantityRemaining(double quantityRemaining) {
 		this.quantityRemaining = quantityRemaining;
-	}
-	public double getCommission() {
-		return commission;
-	}
-	public void setCommission(double commission) {
-		this.commission = commission;
 	}
 	public double getPrice() {
 		return price;
@@ -117,5 +117,65 @@ public class OrderHistory {
 	}
 	public void setImmediateOrCancel(boolean immediateOrCancel) {
 		this.immediateOrCancel = immediateOrCancel;
+	}
+	public double getReserved() {
+		return reserved;
+	}
+	public void setReserved(double reserved) {
+		this.reserved = reserved;
+	}
+	public double getReserveRemaining() {
+		return reserveRemaining;
+	}
+	public void setReserveRemaining(double reserveRemaining) {
+		this.reserveRemaining = reserveRemaining;
+	}
+	public double getCommissionReserved() {
+		return commissionReserved;
+	}
+	public void setCommissionReserved(double commissionReserved) {
+		this.commissionReserved = commissionReserved;
+	}
+	public double getCommissionReserveRemaining() {
+		return commissionReserveRemaining;
+	}
+	public void setCommissionReserveRemaining(double commissionReserveRemaining) {
+		this.commissionReserveRemaining = commissionReserveRemaining;
+	}
+	public double getCommissionPaid() {
+		return commissionPaid;
+	}
+	public void setCommissionPaid(double commissionPaid) {
+		this.commissionPaid = commissionPaid;
+	}
+	public Date getOpened() {
+		return opened;
+	}
+	public void setOpened(Date opened) {
+		this.opened = opened;
+	}
+	public Date getClosed() {
+		return closed;
+	}
+	public void setClosed(Date closed) {
+		this.closed = closed;
+	}
+	public boolean isOpen() {
+		return isOpen;
+	}
+	public void setOpen(boolean isOpen) {
+		this.isOpen = isOpen;
+	}
+	public String getSentinel() {
+		return sentinel;
+	}
+	public void setSentinel(String sentinel) {
+		this.sentinel = sentinel;
+	}
+	public boolean isCancelInitiated() {
+		return cancelInitiated;
+	}
+	public void setCancelInitiated(boolean cancelInitiated) {
+		this.cancelInitiated = cancelInitiated;
 	}
 }
