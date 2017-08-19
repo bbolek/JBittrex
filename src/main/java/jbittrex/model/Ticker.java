@@ -29,4 +29,8 @@ public class Ticker {
 	public void setLast(double last) {
 		this.last = last;
 	}
+	@Override
+	public String toString() {
+		return "Ticker [bid=" + bid + ", ask=" + ask + ", last=" + last + "]";
+	}
 }

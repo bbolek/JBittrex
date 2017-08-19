@@ -178,4 +178,15 @@ public class Order {
 	public void setCancelInitiated(boolean cancelInitiated) {
 		this.cancelInitiated = cancelInitiated;
 	}
+	@Override
+	public String toString() {
+		return "Order [orderUuid=" + orderUuid + ", exchange=" + exchange + ", limit=" + limit + ", quantity="
+				+ quantity + ", quantityRemaining=" + quantityRemaining + ", reserved=" + reserved
+				+ ", reserveRemaining=" + reserveRemaining + ", commissionReserved=" + commissionReserved
+				+ ", commissionReserveRemaining=" + commissionReserveRemaining + ", commissionPaid=" + commissionPaid
+				+ ", price=" + price + ", pricePerUnit=" + pricePerUnit + ", opened=" + opened + ", closed=" + closed
+				+ ", isOpen=" + isOpen + ", sentinel=" + sentinel + ", cancelInitiated=" + cancelInitiated
+				+ ", isConditional=" + isConditional + ", condition=" + condition + ", conditionTarget="
+				+ conditionTarget + ", orderType=" + orderType + ", immediateOrCancel=" + immediateOrCancel + "]";
+	}
 }

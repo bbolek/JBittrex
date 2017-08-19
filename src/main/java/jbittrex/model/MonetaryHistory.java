@@ -87,4 +87,11 @@ public class MonetaryHistory {
 	public void setInvalidAddress(boolean invalidAddress) {
 		this.invalidAddress = invalidAddress;
 	}
+	@Override
+	public String toString() {
+		return "MonetaryHistory [paymentUuid=" + paymentUuid + ", currency=" + currency + ", address=" + address
+				+ ", opened=" + opened + ", authorized=" + authorized + ", pendingPayment=" + pendingPayment
+				+ ", txCost=" + txCost + ", txId=" + txId + ", canceled=" + canceled + ", invalidAddress="
+				+ invalidAddress + "]";
+	}
 }

@@ -61,4 +61,10 @@ public class Currency {
 	public void setBaseAddress(String baseAddress) {
 		this.baseAddress = baseAddress;
 	}
+	@Override
+	public String toString() {
+		return "Currency [currency=" + currency + ", currencyLong=" + currencyLong + ", minConfirmation="
+				+ minConfirmation + ", txFee=" + txFee + ", isActive=" + isActive + ", coinType=" + coinType
+				+ ", baseAddress=" + baseAddress + "]";
+	}
 }

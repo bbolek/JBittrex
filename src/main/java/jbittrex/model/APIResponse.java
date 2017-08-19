@@ -24,4 +24,8 @@ public class APIResponse<T> {
 	public void setResult(T result) {
 		this.result = result;
 	}
+	@Override
+	public String toString() {
+		return "APIResponse [success=" + success + ", message=" + message + ", result=" + result.toString() + "]";
+	}
 }

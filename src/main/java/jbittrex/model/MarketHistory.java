@@ -63,4 +63,9 @@ public class MarketHistory {
 	public void setOrderType(String orderType) {
 		this.orderType = orderType;
 	}
+	@Override
+	public String toString() {
+		return "MarketHistory [id=" + id + ", timeStamp=" + timeStamp + ", quantity=" + quantity + ", price=" + price
+				+ ", total=" + total + ", fillType=" + fillType + ", orderType=" + orderType + "]";
+	}
 }

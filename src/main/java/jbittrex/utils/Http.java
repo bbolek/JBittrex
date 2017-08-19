@@ -56,7 +56,11 @@ public class Http {
 	 */
 	public static String fetch(String url, HashMap<String, Object> queryParams, String apiSecret) throws Exception {
 		long nonce = new Date().getTime();
-		String finalUrl = API_URL + url + "?apikey="+queryParams.get("apiKey")+"&nonce=" + nonce;
+		String finalUrl = API_URL + url+"?";
+		for (Entry<String, Object> param : queryParams.entrySet()) {
+			finalUrl = finalUrl + param.getKey() + "=" + param.getValue() + "&";
+		}
+		finalUrl = finalUrl + "nonce="+nonce;
 		HttpRequest request = Unirest.get(finalUrl);
 		String sign = sign(apiSecret, finalUrl);
 		HttpResponse<String> httpResult = request.header("apisign", sign).asString(); 

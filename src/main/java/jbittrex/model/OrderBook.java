@@ -1,5 +1,7 @@
 package jbittrex.model;
 
+import java.util.Arrays;
+
 public class OrderBook {
 
 	OrderBookItem[] buy;
@@ -16,5 +18,9 @@ public class OrderBook {
 	}
 	public void setSell(OrderBookItem[] sell) {
 		this.sell = sell;
+	}
+	@Override
+	public String toString() {
+		return "OrderBook [buy=" + Arrays.toString(buy) + ", sell=" + Arrays.toString(sell) + "]";
 	}
 }

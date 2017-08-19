@@ -62,5 +62,11 @@ public class Market {
 	public void setCreated(Date created) {
 		this.created = created;
 	}
+	@Override
+	public String toString() {
+		return "Market [marketCurrency=" + marketCurrency + ", baseCurrency=" + baseCurrency + ", marketCurrencyLong="
+				+ marketCurrencyLong + ", baseCurrencyLong=" + baseCurrencyLong + ", minTradeSize=" + minTradeSize
+				+ ", isActive=" + isActive + ", created=" + created + "]";
+	}
 	
 }

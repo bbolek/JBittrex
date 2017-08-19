@@ -118,4 +118,12 @@ public class OrderHistory {
 	public void setImmediateOrCancel(boolean immediateOrCancel) {
 		this.immediateOrCancel = immediateOrCancel;
 	}
+	@Override
+	public String toString() {
+		return "OrderHistory [orderUuid=" + orderUuid + ", exchange=" + exchange + ", timeStamp=" + timeStamp
+				+ ", orderType=" + orderType + ", limit=" + limit + ", quantity=" + quantity + ", quantityRemaining="
+				+ quantityRemaining + ", commission=" + commission + ", price=" + price + ", pricePerUnit="
+				+ pricePerUnit + ", isConditional=" + isConditional + ", condition=" + condition + ", conditionTarget="
+				+ conditionTarget + ", immediateOrCancel=" + immediateOrCancel + "]";
+	}
 }

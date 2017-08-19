@@ -21,4 +21,8 @@ public class OrderBookItem {
 	public void setRate(double rate) {
 		this.rate = rate;
 	}
+	@Override
+	public String toString() {
+		return "OrderBookItem [quantity=" + quantity + ", rate=" + rate + "]";
+	}
 }

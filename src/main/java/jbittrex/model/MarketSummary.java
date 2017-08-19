@@ -119,4 +119,11 @@ public class MarketSummary {
 	public void setDisplayMarketName(String displayMarketName) {
 		this.displayMarketName = displayMarketName;
 	}
+	@Override
+	public String toString() {
+		return "MarketSummary [marketName=" + marketName + ", high=" + high + ", low=" + low + ", volume=" + volume
+				+ ", last=" + last + ", baseVolume=" + baseVolume + ", timeStamp=" + timeStamp + ", bid=" + bid
+				+ ", ask=" + ask + ", openBuyOrders=" + openBuyOrders + ", openSellOrders=" + openSellOrders
+				+ ", prevDay=" + prevDay + ", created=" + created + ", displayMarketName=" + displayMarketName + "]";
+	}
 }
