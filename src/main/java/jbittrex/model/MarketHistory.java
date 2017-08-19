@@ -7,19 +7,19 @@ import com.google.gson.annotations.SerializedName;
 public class MarketHistory {
 
 	@SerializedName("Id")
-	public long id;
+	private long id;
 	@SerializedName("TimeStamp")
-	public Date timeStamp;
+	private Date timeStamp;
 	@SerializedName("Quantity")
-	public double quantity;
+	private double quantity;
 	@SerializedName("Price")
-	public double price;
+	private double price;
 	@SerializedName("Total")
-	public double total;
+	private double total;
 	@SerializedName("FillType")
-	public String fillType;
+	private String fillType;
 	@SerializedName("OrderType")
-	public String orderType;	
+	private String orderType;	
 
 	public long getId() {
 		return id;

@@ -31,15 +31,15 @@ public class Order {
 	@SerializedName("PricePerUnit")
 	private double pricePerUnit;
 	@SerializedName("Opened")
-	public Date opened;
+	private Date opened;
 	@SerializedName("Closed")
-	public Date closed;
+	private Date closed;
 	@SerializedName("IsOpen")
-	public boolean isOpen;
+	private boolean isOpen;
 	@SerializedName("Sentinel")
-	public String sentinel;
+	private String sentinel;
 	@SerializedName("CancelInitiated")
-	public boolean cancelInitiated;
+	private boolean cancelInitiated;
 	@SerializedName("IsConditional")
 	private boolean isConditional;
 	@SerializedName("Condition")
@@ -47,7 +47,7 @@ public class Order {
 	@SerializedName("ConditionTarget")
 	private String conditionTarget;
 	@SerializedName("OrderType")
-	public String orderType;
+	private String orderType;
 	@SerializedName("ImmediateOrCancel")
 	private boolean immediateOrCancel;	
 	

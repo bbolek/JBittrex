@@ -2,7 +2,7 @@ package jbittrex.model;
 
 public class Id {
 
-	String uuid;
+	private String uuid;
 
 	public String getUuid() {
 		return uuid;

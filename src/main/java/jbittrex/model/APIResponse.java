@@ -4,7 +4,7 @@ public class APIResponse<T> {
 
 	private boolean success;
 	private String message;
-	public T result;
+	private T result;
 	
 	public boolean isSuccess() {
 		return success;

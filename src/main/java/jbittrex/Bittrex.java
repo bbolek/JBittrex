@@ -58,7 +58,7 @@ public class Bittrex {
 			APIResponse<Id> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<Id>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -87,7 +87,7 @@ public class Bittrex {
 			APIResponse<Id> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<Id>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -111,7 +111,7 @@ public class Bittrex {
 			String resultBody = Http.fetch("/market/cancel", params, this.apiSecret);
 			APIResponse<Id> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<Id>>() {});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -134,7 +134,7 @@ public class Bittrex {
 			APIResponse<Order[]> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<Order[]>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -161,7 +161,7 @@ public class Bittrex {
 			APIResponse<AccountBalance[]> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<AccountBalance[]>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -186,7 +186,7 @@ public class Bittrex {
 			APIResponse<AccountBalance> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<AccountBalance>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -211,7 +211,7 @@ public class Bittrex {
 			APIResponse<DepositAddress> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<DepositAddress>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -223,6 +223,15 @@ public class Bittrex {
 	
 	
 	
+	/**
+	 * Withdraws currency
+	 * @param currency: Currency to withdraw
+	 * @param quantity : withdrawal quantity
+	 * @param address: Withdrawal address
+	 * @param paymentId: Info Note, Not Required
+	 * @return
+	 * @throws Exception
+	 */
 	public Id withdraw(String currency, double quantity, String address, String paymentId) throws Exception {
 		try {
 			HashMap<String, Object> params = new HashMap<>();
@@ -245,7 +254,7 @@ public class Bittrex {
 			APIResponse<Id> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<Id>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -255,6 +264,12 @@ public class Bittrex {
 		}
 	}
 	
+	/**
+	 * Returns details of Order
+	 * @param uuid : Order Id
+	 * @return : Order Details
+	 * @throws Exception
+	 */
 	public Order getOrder(String uuid) throws Exception {
 		try {
 			HashMap<String, Object> params = new HashMap<>();
@@ -264,7 +279,7 @@ public class Bittrex {
 			APIResponse<Order> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<Order>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -274,6 +289,12 @@ public class Bittrex {
 		}
 	}
 	
+	/**
+	 * Returns all order history by market. Market may be omitted
+	 * @param marketName
+	 * @return
+	 * @throws Exception
+	 */
 	public OrderHistory[] getOrderHistory(String marketName) throws Exception {
 		try {
 			HashMap<String, Object> params = new HashMap<>();
@@ -285,7 +306,7 @@ public class Bittrex {
 			APIResponse<OrderHistory[]> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<OrderHistory[]>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -295,7 +316,12 @@ public class Bittrex {
 		}
 	}
 	
-	
+	/**
+	 * Gets Withdrawal History of Currency. In case of empty currency, returns all history
+	 * @param currency : Currency of the requested history
+	 * @return All History of Withdrawal 
+	 * @throws Exception
+	 */
 	public MonetaryHistory[] getWithdrawalHistory(String currency) throws Exception {
 		try {
 			HashMap<String, Object> params = new HashMap<>();
@@ -307,7 +333,7 @@ public class Bittrex {
 			APIResponse<MonetaryHistory[]> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<MonetaryHistory[]>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -317,7 +343,12 @@ public class Bittrex {
 		}
 	}
 	
-	
+	/**
+	 * Gets Deposit History of Currency. In case of empty currency, returns all history
+	 * @param currency : Currency of the requested history
+	 * @return All History of Deposits 
+	 * @throws Exception
+	 */
 	public MonetaryHistory[] getDepositHistory(String currency) throws Exception {
 		try {
 			HashMap<String, Object> params = new HashMap<>();
@@ -329,7 +360,7 @@ public class Bittrex {
 			APIResponse<MonetaryHistory[]> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<MonetaryHistory[]>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -357,7 +388,7 @@ public class Bittrex {
 			APIResponse<Market[]> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<Market[]>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -380,7 +411,7 @@ public class Bittrex {
 					new TypeToken<APIResponse<MarketSummary[]>>() {
 					});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -406,8 +437,8 @@ public class Bittrex {
 					new TypeToken<APIResponse<MarketSummary[]>>() {
 					});
 			if (parsedResponse.isSuccess()) {
-				if (parsedResponse.result.length > 0) {
-					return parsedResponse.result[0];
+				if (parsedResponse.getResult().length > 0) {
+					return parsedResponse.getResult()[0];
 				}
 				throw new Exception("Invalid Market : " + marketName);
 			} else {
@@ -434,7 +465,7 @@ public class Bittrex {
 					new TypeToken<APIResponse<MarketHistory[]>>() {
 					});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -463,7 +494,7 @@ public class Bittrex {
 			APIResponse<OrderBook> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<OrderBook>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -486,7 +517,7 @@ public class Bittrex {
 					new TypeToken<APIResponse<Currency[]>>() {
 					});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
@@ -511,7 +542,7 @@ public class Bittrex {
 			APIResponse<Ticker> parsedResponse = parseResponse(resultBody, new TypeToken<APIResponse<Ticker>>() {
 			});
 			if (parsedResponse.isSuccess()) {
-				return parsedResponse.result;
+				return parsedResponse.getResult();
 			} else {
 				throw new Exception("Server Response : " + parsedResponse.getMessage());
 			}
